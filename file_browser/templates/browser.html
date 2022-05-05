@@ -1,15 +1,40 @@
 {% extends 'base.html' %}
-{% block title %}— {{ path }}{% endblock %}
-{% block leftbar %}
+
+{% block title %}
+  {{ path }}
+{% endblock %}
+
+{% block left %}
+  <h1>
+    {% if path|string == "/" %}
+      <a href="/">/</a>
+    {% else %}
+      {% for pathpart in path.parents|reverse() %}
+        {% if pathpart|string == "/" %}
+          <a href="/">/</a>
+        {% else %}
+          <a href="{{ pathpart }}">
+            {{ pathpart.stem }}
+          </a>
+          /
+        {% endif %}
+      {% endfor %}
+      {{ path.name }}
+    {% endif %}
+  </h1>
+{% endblock %}
+
+{% block center %}
 {% for folder in folder_directory %}
-<a href="{{ folder }}" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fas fa-folder"></i> {{ folder.name }}</a>
+  <a href="{{ folder }}">
+    <button>
+      {{ folder.name }}
+    </button>
+  </a>
 {% endfor %}
 {% for file in files_directory %}
-<button type="button" class="list-group-item list-group-item-action list-group-item-secondary"><i class="fas fa-file"></i> {{ file.name }}</button>
+  <button disabled>
+    {{ file.name }}
+  </button>
 {% endfor %}
-{% endblock %}
-{% block center %}
-{% block content %}
-<h1> {% for pathpart in path.parents|reverse() %}/ <a href="{{ pathpart }}">{{ pathpart.stem }}</a> {% endfor %}/ {{ path.name }} </h1>
-{% endblock %}
 {% endblock %}
