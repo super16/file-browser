@@ -1,2 +1,5 @@
-# Cache files
-/__pycache__/*
+env/
+.mypy_cache
+
+*.pyc
+__pycache__/
