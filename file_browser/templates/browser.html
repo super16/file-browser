@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block title %}
   {{ path }}
@@ -25,16 +25,16 @@
 {% endblock %}
 
 {% block center %}
-{% for folder in folder_directory %}
-  <a href="{{ folder }}">
-    <button>
-      {{ folder.name }}
+  {% for directory in directories_list %}
+    <a href="{{ directory }}">
+      <button>
+        📁 {{ directory.name }}
+      </button>
+    </a>
+  {% endfor %}
+  {% for file in files_list %}
+    <button disabled>
+      📋 {{ file.name }}
     </button>
-  </a>
-{% endfor %}
-{% for file in files_directory %}
-  <button disabled>
-    {{ file.name }}
-  </button>
-{% endfor %}
+  {% endfor %}
 {% endblock %}

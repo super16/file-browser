@@ -8,7 +8,7 @@ def page_not_found(error: FileNotFoundError) -> str:
     Returns:
       Rendered 404.html.
     """
-    return render_template('404.html')
+    return render_template("404.html")
 
 
 def internal_server_error(error: Exception) -> str:
@@ -18,7 +18,7 @@ def internal_server_error(error: Exception) -> str:
     Returns:
       Rendered 500.html.
     """
-    return render_template('500.html')
+    return render_template("500.html")
 
 
 def permission_error(error: PermissionError) -> str:
@@ -29,4 +29,4 @@ def permission_error(error: PermissionError) -> str:
     Returns:
       Rendered permission_error.html.
     """
-    return render_template('permission_error.html')
+    return render_template("permission_error.html")

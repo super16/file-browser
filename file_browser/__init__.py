@@ -35,8 +35,8 @@ def create_app() -> Flask:
         return render_template(
             "browser.html",
             path=p,
-            folder_directory=directories_list(p),
-            files_directory=files_list(p),
+            directories_list=directories_list(p),
+            files_list=files_list(p),
         )
 
     @app.route("/")
@@ -52,8 +52,8 @@ def create_app() -> Flask:
         return render_template(
             "browser.html",
             path=p,
-            folder_directory=directories_list(p),
-            files_directory=files_list(p),
+            directories_list=directories_list(p),
+            files_list=files_list(p),
         )
 
     # Errors
