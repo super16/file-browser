@@ -7,18 +7,26 @@ Don't forget to change rules of your firewall to open ports. 😏
 
 ![Web Interface example](file_browser/static/screenshot.png)
 
-## Prepare and activate environment (Unix)
+## Development
 
-```bash
-python3 -m venv env
-source env/bin/activate
-pip install -r requirements.txt
+Requires [poetry](https://python-poetry.org/) and Pico.css
+(as [submodule](file_browser/static)).
+
+### Install dependencies
+
+```shell
+poetry install --with development 
 ```
 
-## Development run
+### Lint
 
-```bash
-export FLASK_APP=file_browser
-export FLASK_ENV=development
-flask run
+```shell
+poetry run flake8
+poetry run mypy file_browser/
+```
+
+### Run
+
+```shell
+poetry run flask --app file_browser run
 ```

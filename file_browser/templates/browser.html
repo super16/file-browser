@@ -25,16 +25,20 @@
 {% endblock %}
 
 {% block center %}
-  {% for directory in directories_list %}
-    <a href="{{ directory }}">
-      <button>
-        📁 {{ directory.name }}
-      </button>
-    </a>
-  {% endfor %}
-  {% for file in files_list %}
-    <button disabled>
-      📋 {{ file.name }}
-    </button>
-  {% endfor %}
+  <ul>
+    {% for directory in directories_list %}
+      <li>
+        <a href="{{ directory }}">
+            📁 {{ directory.name }}
+        </a>
+      </li>
+    {% endfor %}
+    {% for file in files_list %}
+      <li>
+        <span>
+          📋 {{ file.name }}
+        </span>
+      </li>
+      {% endfor %}
+  </ul>
 {% endblock %}

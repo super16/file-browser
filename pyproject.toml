@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "file-browser"
+version = "0.1.0"
+description = "Flask File Browser Application"
+authors = ["Mark <https://github.com/super16>"]
+readme = "README.md"
+packages = [{include = "file_browser"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^2.2.3"
+
+[tool.poetry.group.development.dependencies]
+mypy = "^1.0.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

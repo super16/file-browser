@@ -1,0 +1,3 @@
+[submodule "file_browser/static/pico"]
+	path = file_browser/static/pico
+	url = git@github.com:picocss/pico.git
