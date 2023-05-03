@@ -8,7 +8,7 @@ packages = [{include = "file_browser"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-flask = "^2.2.3"
+flask = "^2.3.2"
 
 [tool.poetry.group.development.dependencies]
 mypy = "^1.0.0"
