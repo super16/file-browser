@@ -7,12 +7,12 @@ readme = "README.md"
 packages = [{include = "file_browser"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
-flask = "^2.3.2"
+python = "^3.12"
+flask = "^3.0.3"
 
 [tool.poetry.group.development.dependencies]
-mypy = "^1.0.0"
-flake8 = "^6.0.0"
+mypy = "^1.10.0"
+flake8 = "^7.0.0"
 
 [build-system]
 requires = ["poetry-core"]
